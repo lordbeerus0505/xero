@@ -1,241 +1,253 @@
-api_url: http://45c9c08e.ngrok.io/apiurl/
+api_url: http://225b6e0e.ngrok.io/apiurl/
 creator_email: abhiram.natarajan@gmail.com
-documentation_url: http://a491b035.ngrok.io/docs
+documentation_url: http://yellowant.com
 functions:
-  create_company:
-    function_type: 1
-    input_args:
-      Company-Address:
-        arg_type: 14
-        description: Address of the company
-        example: Bangalore, Karnataka, India
-        name: Company-Address
-        required: 0
-      Company-Email:
-        arg_type: 14
-        description: EmailID of company personnel
-        example: ankur@yellowant.com
-        name: Company-Email
-        required: 0
-      Company-Name:
-        arg_type: 14
-        description: Name of company
-        example: YellowAnt
-        name: Company-Name
-        required: 1
-      Company-Phone:
-        arg_type: 14
-        description: Company Phone number
-        example: '9340148124'
-        name: Company-Phone
-        required: 0
-      Company-URL:
-        arg_type: 14
-        description: Website of the company
-        example: http://yellowant.com
-        name: Company-URL
-        required: 0
-    invoke_name: create_company
-    is_active: 1
-    max_retries: 0
-    name: Create Company
-    output_keys: {}
-    privacy_mode: 0
-    rate_limited: 0
-    short_description: Company contact details
-    user_rate_limit: 0.0
-  create_contact:
-    function_type: 1
-    input_args:
-      Address:
-        arg_type: 14
-        description: Address of the contact
-        example: Koramangala, Bangalore
-        name: Address
-        required: 0
-      Company-Name:
-        arg_type: 14
-        description: Name of Company associated with
-        example: YellowAnt
-        name: Company-Name
-        required: 0
-      Email:
-        arg_type: 14
-        description: Email ID of the contact
-        example: ankur@yellowant.com
-        name: Email
-        required: 0
-      Full-Name:
-        arg_type: 14
-        description: First name of contact
-        example: George
-        name: Full-Name
-        required: 1
-      Phone-No:
-        arg_type: 14
-        description: Phone Number of the contact
-        example: '59301412094'
-        name: Phone-No
-        required: 0
-    invoke_name: create_contact
-    is_active: 1
-    max_retries: 0
-    name: Create a contact
-    output_keys: {}
-    privacy_mode: 0
-    rate_limited: 0
-    short_description: Creating contacts
-    user_rate_limit: 0.0
-  create_deal_note:
-    function_type: 1
-    input_args:
-      Deal-ID:
-        arg_type: 14
-        description: Deal ID to make note onto. Run the list all deals function to
-          receive the ID mapping to a deal.
-        example: '195705124812'
-        name: Deal-ID
-        required: 1
-      Description:
-        arg_type: 14
-        description: Description of deal note
-        example: 4 iron man figurines
-        name: Description
-        required: 0
-      Subject:
-        arg_type: 14
-        description: Subject of the Note
-        example: Selling Toys
-        name: Subject
-        required: 1
-    invoke_name: create_deal_note
-    is_active: 1
-    max_retries: 0
-    name: Create Note for a Deal
-    output_keys: {}
-    privacy_mode: 0
-    rate_limited: 0
-    short_description: Create a note for a deal
-    user_rate_limit: 0.0
-  create_note:
-    function_type: 1
-    input_args:
-      Description:
-        arg_type: 14
-        description: Description of the note
-        example: Book a  flight to Sydney on the 30th
-        name: Description
-        required: 0
-      EmailID:
-        arg_type: 14
-        description: Search for contact via email ID
-        example: ankur@yellowant.com
-        name: EmailID
-        required: 1
-      Subject:
-        arg_type: 14
-        description: Subject of the note
-        example: Flight Bookings
-        name: Subject
-        required: 1
-    invoke_name: create_note
-    is_active: 1
-    max_retries: 0
-    name: Create Note for a Contact
-    output_keys: {}
-    privacy_mode: 0
-    rate_limited: 0
-    short_description: Create a note on agile crm for a  specific contact
-    user_rate_limit: 0.0
-  list_deals:
+  list_contacts:
     function_type: 1
     input_args: {}
-    invoke_name: list_deals
+    invoke_name: list_contacts
     is_active: 1
     max_retries: 0
-    name: List All Deals
-    output_keys:
-      _keys:
-        list: '[list]:    List of List'
-      list:
-        ID: '__unicode:    List  region  names'
-        Name: '__unicode:    List  region  names'
-    privacy_mode: 0
-    rate_limited: 0
-    short_description: List all deals of the user
-    user_rate_limit: 0.0
-  make_deal:
-    function_type: 1
-    input_args:
-      Deal-Close-Date:
-        arg_type: 14
-        description: Close date of deal
-        example: 14/05/2020
-        name: Deal-Close-Date
-        required: 0
-      Deal-Milestone:
-        arg_type: 14
-        description: Milestone of Deal
-        example: Proposal
-        name: Deal-Milestone
-        required: 1
-      Deal-Name:
-        arg_type: 14
-        description: Name of the deal
-        example: Sales
-        name: Deal-Name
-        required: 1
-      Deal-Probability:
-        arg_type: 14
-        description: Probability of deal
-        example: '20'
-        name: Deal-Probability
-        required: 1
-      Deal-Value:
-        arg_type: 14
-        description: Value of the deal
-        example: '500'
-        name: Deal-Value
-        required: 1
-    invoke_name: make_deal
-    is_active: 1
-    max_retries: 0
-    name: Make Deal
+    name: List contacts
     output_keys: {}
     privacy_mode: 0
     rate_limited: 0
-    short_description: Make a deal on AgileCRM
+    short_description: List all contacts on Xero
     user_rate_limit: 0.0
-  search_by_email:
+  list_invoices:
+    function_type: 1
+    input_args: {}
+    invoke_name: list_invoices
+    is_active: 1
+    max_retries: 0
+    name: List Invoices
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: List all invoices available
+    user_rate_limit: 0.0
+  list_purchase_orders:
+    function_type: 1
+    input_args: {}
+    invoke_name: list_purchase_orders
+    is_active: 1
+    max_retries: 0
+    name: List purchase orders
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: List all purchases made
+    user_rate_limit: 0.0
+  reauthenticate:
+    function_type: 1
+    input_args: {}
+    invoke_name: reauthenticate
+    is_active: 1
+    max_retries: 0
+    name: Re Authetication
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Perform an authentication for another 30 minutes
+    user_rate_limit: 0.0
+  search_contact:
     function_type: 1
     input_args:
+      Name:
+        arg_type: 14
+        description: Name could be either the First name of the contact or the last
+          name or the company name
+        example: Joe
+        name: Name
+        required: 1
+    invoke_name: search_contact
+    is_active: 1
+    max_retries: 0
+    name: Search Contacts
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Search for contact details using either the first or last name
+      or the company name
+    user_rate_limit: 0.0
+  search_invoice:
+    function_type: 1
+    input_args:
+      Search-key:
+        arg_type: 14
+        description: Search key may either be the Company name or reference number
+          or invoice due date
+        example: Yellowant
+        name: Search-key
+        required: 1
+    invoke_name: search_invoice
+    is_active: 1
+    max_retries: 0
+    name: Search Invoices
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Search onvoices for content based on their reference number,
+      the company name or the due date in yymmdd format
+    user_rate_limit: 0.0
+  search_purchase_orders:
+    function_type: 1
+    input_args:
+      Search-key:
+        arg_type: 14
+        description: The search key may be your Company Name or Purchase Date, DeliveryDate
+          or Purchase Order Number
+        example: Tom
+        name: Search-key
+        required: 1
+    invoke_name: search_purchase_orders
+    is_active: 1
+    max_retries: 0
+    name: Search Purchase Orders
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Search all purchase orders by Company name, due date order
+      number or total cost
+    user_rate_limit: 0.0
+  update_contact:
+    function_type: 1
+    input_args:
+      Address-Line-1:
+        arg_type: 14
+        description: The first line of the address
+        example: '#13, Railway parallel road'
+        name: Address-Line-1
+        required: 0
+      Address-Line-2:
+        arg_type: 14
+        description: Second line of the address
+        example: Vijaynagar, BMTC bus stand
+        name: Address-Line-2
+        required: 0
       EmailID:
         arg_type: 14
-        description: Email ID using which search is to be performed
-        example: a@something.com
+        description: The email ID of the contact to be updated.
+        example: test@yellowant.com
         name: EmailID
         required: 1
-    invoke_name: search_by_email
+      Mobile-Number:
+        arg_type: 14
+        description: Alter the mobile number provided. Does not alter the fax or phone
+          numbers.
+        example: '9124141414'
+        name: Mobile-Number
+        required: 0
+      Name:
+        arg_type: 14
+        description: Company Name to be altered. Note that first and last name cannot
+          be altered this way
+        example: Yellowant
+        name: Name
+        required: 0
+    invoke_name: update_contact
     is_active: 1
     max_retries: 0
-    name: Search by email
+    name: Update Contact Information
     output_keys: {}
     privacy_mode: 0
     rate_limited: 0
-    short_description: Search for contact info by email
+    short_description: Use email address to authenticate the change of other credentials
     user_rate_limit: 0.0
-icon_url: https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_1520572498/agile-crm.png
-install_page_url: http://e696adb0.ngrok.io/install
-invoke_name: agile
+  update_invoice:
+    function_type: 1
+    input_args:
+      Amount-Due:
+        arg_type: 14
+        description: Amount Due
+        example: '400.5'
+        name: Amount-Due
+        required: 0
+      Amount-Paid:
+        arg_type: 14
+        description: Amount Paid
+        example: '54.75'
+        name: Amount-Paid
+        required: 0
+      Invoice-Number:
+        arg_type: 14
+        description: The invoice number is used as parameter
+        example: INV-0004
+        name: Invoice-Number
+        required: 1
+      SubTotal:
+        arg_type: 14
+        description: Sub Total of the invoice
+        example: '500'
+        name: SubTotal
+        required: 0
+      Total:
+        arg_type: 14
+        description: Post tax total
+        example: '545'
+        name: Total
+        required: 0
+    invoke_name: update_invoice
+    is_active: 0
+    max_retries: 0
+    name: Update an Invoice
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Update Invoice data. Can update Amount Due, Paid SubTotoal
+      and Total
+    user_rate_limit: 0.0
+  update_purchase_orders:
+    function_type: 1
+    input_args:
+      DiscountRate:
+        arg_type: 14
+        description: Rate of discount applied
+        example: '5'
+        name: DiscountRate
+        required: 0
+      PurchaseNumber:
+        arg_type: 14
+        description: Purchase Order Number
+        example: PO-0001
+        name: PurchaseNumber
+        required: 1
+      Quantity:
+        arg_type: 14
+        description: Quantity of products needed
+        example: '10'
+        name: Quantity
+        required: 0
+      Tax-Amount:
+        arg_type: 14
+        description: Change the tax amount
+        example: '200'
+        name: Tax-Amount
+        required: 0
+    invoke_name: update_purchase_orders
+    is_active: 0
+    max_retries: 0
+    name: Update Purchase Order
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Update the contents of a purchase order like the amount, discount
+      quantity, tax
+    user_rate_limit: 0.0
+icon_url: https://seeklogo.com/images/X/xero-logo-0DE623D530-seeklogo.com.png
+install_page_url: http://yellowant.com
+invoke_name: xero
 is_active: 1
 is_production_or_sandbox: 0
-long_description: Agile CRM implementations
-name: Agile CRM
-privacy_policy_url: http://a491b035.ngrok.io/privacy
+long_description: Xero is an accounting service software. Xero integration for yellowant
+  .
+name: Xero
+privacy_policy_url: http://yellowant.com
 rate_limit: 0.0
 rate_limited: 0
-redirect_uris: http://45c9c08e.ngrok.io/redirecturl/
-short_description: Agile CRM implementations
+redirect_uris: http://225b6e0e.ngrok.io/redirecturl/
+short_description: Xero is an accounting service software. Xero integration for yellowant
+  .
 user_rate_limit: 0.0
-visibility_scope: 1
-website: http://e696adb0.ngrok.io/install
+visibility_scope: 0
+website: http://yellowant.com

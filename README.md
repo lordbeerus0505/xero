@@ -1,4 +1,4 @@
-# AgileCRM
+# Xero
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 Go to YellowAnt developers page and click on Generate Developer Token to get "YELLOWANT_DEVELOPER_TOKEN"

@@ -33,21 +33,33 @@ format2='%Y%m%d%H%M%S%f'
 YA_OAUTH_URL = "https://www.yellowant.com/api/oauth2/authorize/"
 # URL to receive oauth2 codes from YA for user authentication. As a developer, you need to provide this URL in the YA
 # developer console so that YA knows exactly where to send the oauth2 codes.
-YA_REDIRECT_URL ="http://01e262bb.ngrok.io/redirecturl/" #BASE_URL+"/redirecturl/" #"http://45c9c08e.ngrok.io/redirecturl/"
+YA_REDIRECT_URL =BASE_URL+"/redirecturl/"#"http://225b6e0e.ngrok.io/redirecturl/" #BASE_URL+"/redirecturl/" #"http://45c9c08e.ngrok.io/redirecturl/"
 
 # Numerical ID generated when you register your application through the YA developer console
 BASE_HREF="/"
 SITE_PROTOCOL = "https://"
 
 
-YA_APP_ID = os.environ.get("YA_APP_ID", 1889)
+# YA_APP_ID = os.environ.get("YA_APP_ID", 1889)
+# # Client ID generated from the YA developer console. Required to identify requests from this application to YA
+# YA_CLIENT_ID = os.environ.get("YA_CLIENT_ID", "JFcI6Bn3vgMtqS8VXVBwp1lRWqR7xqTIn3lCW6gp")
+# # Client secret generated from the YA developer console. Required to identify requests from this application to YA
+# YA_CLIENT_SECRET = os.environ.get("YA_CLIENT_SECRET", "AbY6yYzL3U3c0lBpGDpxQCZHfvbDugrCd20NJoj0OlwgiR3W2WlnispGurLgbcsbe55fxRnWITfgr9l4JMPnYGSHXZpsw0I770XBv9JLUhKBSK4mpgjK2qeS2zHyYM12")
+# # Verification token generated from the YA developer console. This application can verify requests from YA as they will
+# # carry the verification token
+# YA_VERIFICATION_TOKEN = os.environ.get("YA_VERIFICATION_TOKEN", "nYWCRGzCzNmYPXcmd54pnAZPv46X1qnYNaWyKCgNtIakgT6rokRkaM8CSXSksUwCPHJY9r8bsN8tsAIVp5MzPd3SUAuKjMxHl8El1JVjJy75EZlPX7YJfKlgdEW29nUt")
+
+
+
+YA_APP_ID = str(data_json['application_id'])
 # Client ID generated from the YA developer console. Required to identify requests from this application to YA
-YA_CLIENT_ID = os.environ.get("YA_CLIENT_ID", "JFcI6Bn3vgMtqS8VXVBwp1lRWqR7xqTIn3lCW6gp")
+YA_CLIENT_ID = str(data_json['client_id'])
 # Client secret generated from the YA developer console. Required to identify requests from this application to YA
-YA_CLIENT_SECRET = os.environ.get("YA_CLIENT_SECRET", "AbY6yYzL3U3c0lBpGDpxQCZHfvbDugrCd20NJoj0OlwgiR3W2WlnispGurLgbcsbe55fxRnWITfgr9l4JMPnYGSHXZpsw0I770XBv9JLUhKBSK4mpgjK2qeS2zHyYM12")
+YA_CLIENT_SECRET = str(data_json['client_secret'])
 # Verification token generated from the YA developer console. This application can verify requests from YA as they will
 # carry the verification token
-YA_VERIFICATION_TOKEN = os.environ.get("YA_VERIFICATION_TOKEN", "nYWCRGzCzNmYPXcmd54pnAZPv46X1qnYNaWyKCgNtIakgT6rokRkaM8CSXSksUwCPHJY9r8bsN8tsAIVp5MzPd3SUAuKjMxHl8El1JVjJy75EZlPX7YJfKlgdEW29nUt")
+YA_VERIFICATION_TOKEN = str(data_json['verification_token'])
+#YA_VERIFICATION_TOKEN = os.environ.get("YA_VERIFICATION_TOKEN", "flezxPkJQXNPnBhoSsRTPZjBrc0t5pHxklftUgDwJinLHQNE4fuB8bvpKZYarGj08pavza1I4Z8Hp0vznFwkDlSCwI8SWW7obI9TzduZZYKINkT5OQrzhlgyZwbyn7Kb")
 
 ### END YellowAnt specific settings ###
 
@@ -68,7 +80,7 @@ DEBUG = True
 
 
 # SECURITY WARNING: remove wildcard condition from ALLOWED_HOSTS
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*",'{}.herokuapp.com'.format(app_name)]
 
 
 
@@ -102,7 +114,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
