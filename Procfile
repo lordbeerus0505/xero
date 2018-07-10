@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn yellowant_xero.wsgi
+web: gunicorn yellowant_xero_app.wsgi
